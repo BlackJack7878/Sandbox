@@ -1,0 +1,107 @@
+$blue_dark: #829ab3;
+$blue_middle: #b1c0cf;
+$blue_lighter: #d5dce2;
+$bg_color: #15191f;
+
+$Amiko: 'Amiko', sans-serif;
+
+$time: 2;
+
+.blue_lighter { background-color: $blue_lighter; }
+.blue_middle { background-color: $blue_middle; }
+.blue_darker { background-color: $blue_dark; }
+.transparent { background-color: transparent; }
+
+.loading {
+	width: 100%;
+	height: 100%;
+	background-color: $bg_color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&-row {
+		display: flex;
+	}
+
+	&-rect {
+		position: relative;
+		margin: 3px;
+		height: 26px;
+		width: 22px;
+		opacity: 1;
+		animation: blink $time + s infinite;
+
+		&.block-1, &.block-2, &.block-3 {
+			top: -2px;
+			right: 16px;
+		}
+
+		&.block-4, &.block-5, &.block-6 {
+			top: 2px;
+			right: 15.5px;
+		}
+
+		@for $i from 1 through 6 {
+			&.block-#{$i} {
+				animation-delay: -($time / 50) * $i + s;
+			}  
+		}
+
+		&.tran {
+			background-color: transparent;
+		}
+
+		&-up {
+			position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-left: 11.5px solid $bg_color;
+			border-right: 11.5px solid $bg_color;
+			border-bottom: 7px solid transparent;
+		}
+
+		&-down {
+			position: absolute;
+			bottom: -0.4px;
+			width: 0;
+			height: 0;
+			border-left: 11.5px solid $bg_color;
+			border-right: 11.5px solid $bg_color;
+			border-top: 7px solid transparent;
+		}
+	}
+
+	&-text {
+		margin-top: 30px;
+		color: $blue_middle;
+		text-transform: uppercase;
+		font-family: Amiko;
+		letter-spacing: 10px;
+		font-size: 21px;
+		opacity: 0.1;
+		animation: blink-text $time + s infinite;
+		animation-delay: -($time / 50) * 6 + s;
+	}
+}
+
+@keyframes blink {
+	0% { opacity: 1; transform: scale(1); }
+	5% { opacity: 1; transform: scale(1.1); }
+	30% { opacity: 0; transform: scale(0.3); }
+	35% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink-text {
+	25% { opacity: 1; }
+	40% { opacity: 1; }
+	70% { opacity: 0.1; }
+	90% { opacity: 0.1; }
+}

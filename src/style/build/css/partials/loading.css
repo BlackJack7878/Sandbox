@@ -1,0 +1,102 @@
+.blue_lighter {
+  background-color: #d5dce2; }
+
+.blue_middle {
+  background-color: #b1c0cf; }
+
+.blue_darker {
+  background-color: #829ab3; }
+
+.transparent {
+  background-color: transparent; }
+
+.loading {
+  width: 100%;
+  height: 100%;
+  background-color: #15191f;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .loading-row {
+    display: flex; }
+  .loading-rect {
+    position: relative;
+    margin: 3px;
+    height: 26px;
+    width: 22px;
+    opacity: 1;
+    animation: blink 2s infinite; }
+    .loading-rect.block-1, .loading-rect.block-2, .loading-rect.block-3 {
+      top: -2px;
+      right: 16px; }
+    .loading-rect.block-4, .loading-rect.block-5, .loading-rect.block-6 {
+      top: 2px;
+      right: 15.5px; }
+    .loading-rect.block-1 {
+      animation-delay: -0.04s; }
+    .loading-rect.block-2 {
+      animation-delay: -0.08s; }
+    .loading-rect.block-3 {
+      animation-delay: -0.12s; }
+    .loading-rect.block-4 {
+      animation-delay: -0.16s; }
+    .loading-rect.block-5 {
+      animation-delay: -0.2s; }
+    .loading-rect.block-6 {
+      animation-delay: -0.24s; }
+    .loading-rect.tran {
+      background-color: transparent; }
+    .loading-rect-up {
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-left: 11.5px solid #15191f;
+      border-right: 11.5px solid #15191f;
+      border-bottom: 7px solid transparent; }
+    .loading-rect-down {
+      position: absolute;
+      bottom: -0.4px;
+      width: 0;
+      height: 0;
+      border-left: 11.5px solid #15191f;
+      border-right: 11.5px solid #15191f;
+      border-top: 7px solid transparent; }
+  .loading-text {
+    margin-top: 30px;
+    color: #b1c0cf;
+    text-transform: uppercase;
+    font-family: Amiko;
+    letter-spacing: 10px;
+    font-size: 21px;
+    opacity: 0.1;
+    animation: blink-text 2s infinite;
+    animation-delay: -0.24s; }
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  5% {
+    opacity: 1;
+    transform: scale(1.1); }
+  30% {
+    opacity: 0;
+    transform: scale(0.3); }
+  35% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes blink-text {
+  25% {
+    opacity: 1; }
+  40% {
+    opacity: 1; }
+  70% {
+    opacity: 0.1; }
+  90% {
+    opacity: 0.1; } }
